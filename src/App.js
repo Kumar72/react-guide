@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Expenses from "./components/Expenses";
 
 function App() {
+    const expenses = [
+        {
+            id: 'e1',
+            date: new Date(2021, 7,31),
+            title: 'Pocono Mtn - Lodging',
+            amount: 250.41
+        },
+        {
+            id: 'e2',
+            date: new Date(2021, 8,1),
+            title: 'Taughannock Fall State Park - Lodging',
+            amount: 720.28
+        },
+        {
+            id: 'e3',
+            date: new Date(2021, 8,3),
+            title: 'Cherry Spring State Park - Lodging',
+            amount: 150.99
+        }
+    ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Expenses data={expenses}/>
     </div>
   );
 }

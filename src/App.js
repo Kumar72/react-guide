@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import './App.css';
 import NewExpense from "./components/CreateExpense/NewExpense";
 import Expenses from "./components/ViewExpenses/Expenses";
+import EditExpense from "./components/UpdateExpense/EditExpense";
+import DeleteExpense from "./components/DeleteExpense/DeleteExpense";
 
 const SAMPLE_EXPENSES = [
     {
@@ -40,18 +42,26 @@ const App = () => {
     const [expenses, setExpenses] = useState(SAMPLE_EXPENSES);
 
     const addExpenseHandler = expense => {
-        console.log(new Date(2021,7,21))
-        console.log(expense)
         setExpenses(prevExpenses => {
             return [expense, ...prevExpenses];
         });
+    }
+
+    const updateExpenseHandler = expense => {
+    //    TODO - Implement an update Expense Item in the list
+    }
+
+    const removeExpenseHandler = expense => {
+    //    TODO - Implement a remove Expense Item from the list
     }
 
   return (
     <div className="App">
         <NewExpense onAddExpense={addExpenseHandler}/>
         {/*{expenses.map(data => console.log(data))}*/}
-        <Expenses data={expenses}/>
+        <Expenses data={expenses}
+                  onUpdateExepnse={updateExpenseHandler}
+                  onDeleteExpenseHandler={removeExpenseHandler}/>
     </div>
   );
 }

@@ -15,6 +15,10 @@ const Expenses = (props) => {
         return expense.date.getFullYear().toString() === filteredYear;
     }));
 
+    const updateExpenseItem = (props.data.filter(expense => {
+        // return expense.id
+    }))
+
     return (
         <div>
             <Card className='expenses'>
